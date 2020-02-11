@@ -1,2 +1,3 @@
 # prtfolio
-portfolio slider gsap
+portfolio de présentation de mes travaux , effet slider réalisé avec gsap
+
