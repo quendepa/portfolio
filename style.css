@@ -40,11 +40,21 @@ h1 {
     margin:auto;
 }
 
-.fleche{
-    margin-left: 35%;
-    margin-top: 38%;
-  
+
+
+.flech{
+    margin-left: 37%;
+    margin-top: 42%;
+    width:20vh
 }
+
+.flechg{
+    margin-left: 20%;
+    margin-top: 42%;
+    width:20vh
+
+}
+
 .main-title h2 {
     position: fixed;
     transform: translateX(-50%);
