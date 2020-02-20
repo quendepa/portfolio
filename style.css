@@ -2,20 +2,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'MADE Soulmaze';
+    font-family: Georgia, serif;
 }
 
-@font-face {
-    font-family: 'MADE Soulmaze';
-    src: url('fonts/MADESoulmaze.woff2') format('woff2'),
-        url('fonts/MADESoulmaze.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 body , html{
     background: #070707;
     overflow: hidden;
+    font-family: Georgia, serif;
 }
 
 .full-page {
@@ -28,12 +23,27 @@ body , html{
     left: 15vh;
     top: 10vh;
 }
-h1 {
+h1{
+    color: #FF9900;
+    font-family: "Press Start 2P";
+    font-size: 3em;
     text-align: center;
-    
     margin-top: 3vh;
-    color: #ef0303;
-}
+
+    -webkit-animation: neon4 1.2s ease-in-out infinite alternate;
+    -moz-animation: neon4 1.2s ease-in-out infinite alternate;
+    animation: neon4 1.2s ease-in-out infinite alternate;
+  }
+
+  @-webkit-keyframes neon4 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+    }
+  }
+  
 
 .img{
     position:absolute;
