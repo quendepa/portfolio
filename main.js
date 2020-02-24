@@ -177,3 +177,65 @@ async function github(){
     });
 }
 
+  // flèche de direction
+
+    // arrow clicks
+    if (document.getElementById("gauche") === "gauche" || document.getElementById("droite") === "droite") {
+		Slide = this.id === "droite" ? (Slide += 1) : (Slide -= 1);
+  // click on a dot
+    } else if (this.className === "dot") {
+	activeSlide = this.index;  
+	}
+
+
+
+  let flècheGauche = document.getElementById("gauche");
+  let flècheDroite = document.getElementById("droite");
+  let test = document.getElementById("fleche");
+	console.log(flècheDroite, flècheGauche, test);
+
+   let redirect = 1 ;
+
+   flècheGauche.addEventListener("click", () => {
+	console.log("ok");
+	
+	if (redirect > 0){
+
+		redirect = redirect-1;
+		window.location.href = '#slide'+redirect;
+		window.location = document.getElementById('#slide').rediret;
+
+	}
+	
+  
+  });
+
+  flècheDroite.addEventListener("click", () => {
+	gotoPrevSlide()
+
+	
+	if (redirect <= 3) {
+		redirect = redirect+1;
+		window.location.href = '#slide'+redirect;
+	}
+	
+  
+});
+
+let slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
