@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+
 * {
     padding: 0;
     margin: 0;
@@ -24,7 +29,7 @@ body , html{
     top: 10vh;
 }
 h1{
-    color: #FF9900;
+    color: rgb(238, 87, 17);
     font-family: "Press Start 2P";
     font-size: 3em;
     text-align: center;
@@ -35,12 +40,14 @@ h1{
     animation: neon4 1.2s ease-in-out infinite alternate;
   }
 
+
+
   @-webkit-keyframes neon4 {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 20px #fff, 0 0 30px rgb(238, 87, 17), 0 0 40px rgb(238, 87, 17), 0 0 50px rgb(238, 87, 17), 0 0 60px rgb(238, 87, 17), 0 0 70px rgb(238, 87, 17);
     }
     to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px rgb(238, 87, 17), 0 0 35px rgb(238, 87, 17), 0 0 40px rgb(238, 87, 17), 0 0 50px rgb(238, 87, 17), 0 0 75px rgb(238, 87, 17);
     }
   }
   
@@ -66,6 +73,20 @@ h1{
     cursor: pointer;
 }
 
+.allerte{
+    
+    color: rgb(246, 247, 243);
+    font-family: "Press Start 2P";
+    font-size: 3em;
+    text-align: center;
+    margin-top: 43%;
+
+    
+  }
+
+
+
+
 .main-title h2 {
     position: fixed;
     transform: translateX(-50%);
@@ -74,7 +95,7 @@ h1{
     text-align: center;
     color: rgb(14, 13, 13);
     font-size: 120px;
-    font-style: italic;
+    font-family: "Press Start 2P";
     opacity: .2;
 }
 
@@ -144,12 +165,14 @@ h1{
 
 .port-text h4 {
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
     position: relative;
+    font-family: "Press Start 2P";
 }
 
 .port-text h4 span {
     position: absolute;
+    font-family: "Press Start 2P";
     height: 50px;
 }
 

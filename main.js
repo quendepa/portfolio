@@ -1,3 +1,6 @@
+let prev = document.getElementById('gauche');
+let next = document.getElementById('droite');
+let allerte = document.getElementById('allerte')
 let modernSlider = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 100,
@@ -11,7 +14,8 @@ modernSlider.on('slideChange', function () {
     })
     TweenMax.to('.swiper-slide', .5, {
         scale: .95,
-    })
+        })
+
 });
 
 
@@ -23,126 +27,85 @@ modernSlider.on('slideChangeTransitionEnd', function () {
         y: 0,
         delay: .5,
     })
-    TweenMax.to('.swiper-slide-active .port-text', 0, {
+    TweenMax.to('.swiper-slide-active .port-text', 0.6, {
         autoAlpha: 1,
     })
     TweenMax.to('.swiper-slide-next .port-text', 0, {
         autoAlpha: 0,
     })
     
-    TweenMax.to('.swiper-slide-prev .port-text', 0, {
-        autoAlpha: 0,
+    TweenMax.to('.swiper-slide-prev .port-text', 0.8, {
+        autoAlpha: 0.8,
     })
-    TweenMax.to('.swiper-slide-active', .4, {
+    TweenMax.to('.swiper-slide-active', .7, {
         scale: 1,
         ease: Power4.easeOut,
     })
+    
+    
 });
 
 TweenMax.to('.swiper-slide-next .port-text', 0, {
     autoAlpha: 0,
-})
-
-TweenMax.to('.swiper-slide-prev .port-text', 0, {
-    autoAlpha: 0,
-})
-
-TweenMax.to('.swiper-slide-active', 0, {
-    scale: 1,
-})
-
-TweenMax.to('.swiper-slide', 0, {
-    scale: .95,
+    
 })
 
 
-var $slider = $(".slider");
-var $slides = $slider.find(".slider-item");
-var $navPrev = $(".go-prev");
-var $navNext = $(".go-next");
-var slidesNum = $slides.length;
-var prevSlideID = null;
-var currentSlideID = 0;
-var isAnimating = false;
-var isAutoPlay = false;
 
-function init() {
-	TweenLite.set($slides, {
-		left: "-100%"
-	});
-	$navPrev.on("click", gotoPrevSlide);
-	$navNext.on("click", gotoNextSlide);
-	$startAutoplay.on("click", startAutoPlay);
-	$stopAutoplay.on("click", stopAutoPlay);
-	gotoSlide(0, 0);
+
+
+const alertFunc = () => {
+    allerte.style.visibility='hidden';
+
 }
-
-function gotoPrevSlide() {
-	var slideToGo = currentSlideID - 1;
-	if (slideToGo <= -1) {
-		slideToGo = slidesNum - 1;
-	}
-	stopAutoPlay();
-	gotoSlide(slideToGo, 1, "prev");
-}
-
-function gotoNextSlide() {
-	var slideToGo = currentSlideID + 1;
-	if (slideToGo >= slidesNum) {
-		slideToGo = 0;
-	}
-	stopAutoPlay();
-	gotoSlide(slideToGo, 1, "next");
-}
-
-function gotoSlide(slideID, _time, _direction) {
-	if (!isAnimating) {
-		isAnimating = true;
-		prevSlideID = currentSlideID;
-		currentSlideID = slideID;
-		var $prevSlide = $slides.eq(prevSlideID);
-		var $currentSlide = $slides.eq(currentSlideID);
-		var time = 1;
-		if (_time !== null) {
-			time = _time;
-		}
-		var direction = "next";
-		if (_direction != null) {
-			direction = _direction;
-		}
-		if (direction == "next") {
-			TweenLite.to($prevSlide, time, {
-				left: "-100%"
-			});
-			TweenLite.fromTo($currentSlide, time, {
-				left: "100%"
-			}, {
-				left: "0"
-			});
-		} else {
-			TweenLite.to($prevSlide, time, {
-				left: "100%"
-			});
-			TweenLite.fromTo($currentSlide, time, {
-				left: "-100%"
-			}, {
-				left: "0"
-			});
-		}
-		TweenLite.delayedCall(time, function() {
-			isAnimating = false;
-		});
-	}
-}
-
-function play(){
-  gotoNextSlide();
-  TweenLite.delayedCall(4, play);
-}
+setTimeout(alertFunc,7000);
 
 
 
 
+
+
+
+/* 
+next.addEventListener("click", () => {
+    console.log(next);
+
+     TweenMax.to('.reveal', .2, {
+     y: '-50px',
+  })
+     TweenMax.to('.swiper-slide', .5, {
+       scale: .95,
+     })
+     TweenMax.to('.swiper-slide', 1, {
+       x: '-1500px',
+     })
+
+     next.setAttribute("id", "next2");
+
+
+let next2 = document.getElementById('next2');
+next2.addEventListener("click", () => {
+   TweenMax.to('.reveal', .2, {
+      y: '-50px',
+   })
+   TweenMax.to('.swiper-slide', .5, {
+     scale: .95,
+   })
+   TweenMax.to('.swiper-slide', 1, {
+    x: '-3000px',
+   })
+
+    next.setAttribute("id", "next3");
+
+})
+})
+ 
+prev.addEventListener("click", () => {
+  console.log('gauche');
+ 
+  })
+
+*/
 
 
 
@@ -177,65 +140,4 @@ async function github(){
     });
 }
 
-  // flèche de direction
 
-    // arrow clicks
-    if (document.getElementById("gauche") === "gauche" || document.getElementById("droite") === "droite") {
-		Slide = this.id === "droite" ? (Slide += 1) : (Slide -= 1);
-  // click on a dot
-    } else if (this.className === "dot") {
-	activeSlide = this.index;  
-	}
-
-
-
-  let flècheGauche = document.getElementById("gauche");
-  let flècheDroite = document.getElementById("droite");
-  let test = document.getElementById("fleche");
-	console.log(flècheDroite, flècheGauche, test);
-
-   let redirect = 1 ;
-
-   flècheGauche.addEventListener("click", () => {
-	console.log("ok");
-	
-	if (redirect > 0){
-
-		redirect = redirect-1;
-		window.location.href = '#slide'+redirect;
-		window.location = document.getElementById('#slide').rediret;
-
-	}
-	
-  
-  });
-
-  flècheDroite.addEventListener("click", () => {
-	gotoPrevSlide()
-
-	
-	if (redirect <= 3) {
-		redirect = redirect+1;
-		window.location.href = '#slide'+redirect;
-	}
-	
-  
-});
-
-let slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
